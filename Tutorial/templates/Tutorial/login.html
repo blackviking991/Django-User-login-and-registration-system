@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="{% static 'Tutorial/css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="login">
+      <h1>Login</h1>
+      <form method="post">
+        {% csrf_token %}
+        <h4>Enter name</h4>
+        <input type="text" name="username" placeholder="username">
+        <br><br>
+        <h4>Enter password</h4>
+        <input type="password" name="password" placeholder="Password">
+        <br><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+            Submit  
+        </button>
+        <br>
+        {% for message in messages %}
+          <p class="message">{{message}}</p>
+        {% endfor %}
+        <p>Dont have an account?<a href="{% url 'register' %}"> Sign up </a></p>
+      </form>
+    </div>
+    <footer>
+      <img class = "logo" src="{% static 'Tutorial/img/logo-design-trends-2020-animat-unscreen.gif' %}" alt="">
+      <p>Made with <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/love_copy.png" /> by Ishan Dahiya</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Home </title>
+    <link rel="stylesheet" href="{% static 'Tutorial/css/home.css' %}">
+</head>
+<body>
+  
+  
+
+<!-- Starbackground -->
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
+
+<!-- parallax text/java -->
+<div id="parallax">
+  <div class="layer" data-depth="0.6">
+  
+<!-- text -->
+    <div class="some-space">
+      <h1>Hello, {{request.user}}</h1>
+    </div>
+  
+  </div>
+  <div class="layer" data-depth="0.4">
+    <div id="particles-js"></div>
+  </div>
+
+<!-- Button -->
+  <div class="layer" data-depth="0.3">
+    <div class="some-more-space1"><a href="{% url 'logout' %}"> Logout </a></div>
+  </div>
+</div>
+
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Welcome to Homepage</h1>
+    <br>
+    <p>Hello, {{request.user}}</p>
+    <a href="{% url 'logout' %}">Logout</a>
+</body>
+</html> -->
